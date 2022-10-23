@@ -82,10 +82,25 @@ int main(int argc, char* argv[])
     // Feel free to update any code below this point
     // -----------------------------------------------
     Node* head = readList(argv[1]);
+    Node* smaller;
+    Node* larger;
     cout << "Original list: ";
     print(head);
 
     // Test out your linked list code
+    llpivot(head,smaller,larger,8);
+    cout << "New larger than 8 list: ";
+    print(larger);
+    cout << "New less than or equal to 8 list: ";
+    print(smaller);
+
+    larger = llfilter(larger,IntComp());
+    smaller = llfilter(smaller,IntComp());
+
+    cout << "New larger than 8 list without odds: ";
+    print(larger);
+    cout << "New less than or equal to 8 list without odds: ";
+    print(smaller);
 
 
 
